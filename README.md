@@ -1,5 +1,9 @@
 # cleanvid
 
+This is my personal fork to make my workflow a little more efficient. So far, I have updated the naming convention for the scrubbed SRT file and the EDL file so they work automatically with my playback software, and I have modified the EDL file to use HH:MM:SS.sss timestamps instead of S.sss. This just makes it easier for me to reference between the SRT and EDL files when I am customizing the mutes or skips. My usage is to only generate scrubbed SRT and EDL files (that is, I don't do any transcoding or create files for PlexAutoSkip). I don't believe my modifications have broken any of that functionality, but I also haven't tested it since I don't use those features.
+
+See the banners below for links to the original author/work.
+
 [![Latest Version](https://img.shields.io/pypi/v/cleanvid)](https://pypi.python.org/pypi/cleanvid/) [![Docker Image](https://github.com/mmguero/cleanvid/workflows/cleanvid-build-push-ghcr/badge.svg)](https://github.com/mmguero/cleanvid/pkgs/container/cleanvid)
 
 **cleanvid** is a little script to mute profanity in video files in a few simple steps:
@@ -19,18 +23,11 @@ As an alternative to creating a new video file, cleanvid can create a simple EDL
 * 🎤 [monkeyplug](https://github.com/mmguero/monkeyplug) for audio and video files (using either [Whisper](https://openai.com/research/whisper) or the [Vosk](https://alphacephei.com/vosk/)-[API](https://github.com/alphacep/vosk-api) for speech recognition)
 * 📕 [montag](https://github.com/mmguero/montag) for ebooks
 ## Installation
-
-Using `pip`, to install the latest [release from PyPI](https://pypi.org/project/cleanvid/):
-
-```
-python3 -m pip install -U cleanvid
-```
-
-Or to install directly from GitHub:
+To install directly from GitHub:
 
 
 ```
-python3 -m pip install -U 'git+https://github.com/mmguero/cleanvid'
+python3 -m pip install -U 'git+[https://github.com/Travillion/cleanvid]'
 ```
 
 ## Prerequisites
@@ -97,10 +94,6 @@ options:
   --threads <int>       ffmpeg -threads value (for both global options and encoding)
 ```
 
-### Docker
-
-Alternately, a [Dockerfile](./docker/Dockerfile) is provided to allow you to run cleanvid in Docker. You can build the `oci.guero.org/cleanvid:latest` Docker image with [`build_docker.sh`](./docker/build_docker.sh), then run [`cleanvid-docker.sh`](./docker/cleanvid-docker.sh) inside the directory where your video/subtitle files are located.
-
 ## Contributing
 
 If you'd like to help improve cleanvid, pull requests will be welcomed!
@@ -108,6 +101,7 @@ If you'd like to help improve cleanvid, pull requests will be welcomed!
 ## Authors
 
 * **Seth Grover** - *Initial work* - [mmguero](https://github.com/mmguero)
+* **Travis Nichols** - *Tweaks to suit my personal workflow* - [Travillion](https://github.com/Travillion)
 
 ## License
 
