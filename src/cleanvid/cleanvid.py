@@ -331,12 +331,11 @@ class VidCleaner(object):
         shutil.copy2(self.inputSubsFileSpec, self.tmpSubsFileSpec)
         UTF8Convert(self.tmpSubsFileSpec)
 
-        if not self.cleanSubsFileSpec:
-            self.cleanSubsFileSpec = subFileParts[0] + "_clean" + subFileParts[1]
+                if not self.cleanSubsFileSpec:
+            self.cleanSubsFileSpec = subFileParts[0] + ".eng.clean" + subFileParts[1]
 
         if not self.edlFileSpec:
-            cleanSubFileParts = os.path.splitext(self.cleanSubsFileSpec)
-            self.edlFileSpec = cleanSubFileParts[0] + '.edl'
+            self.edlFileSpec = subFileParts[0] + '.edl'
 
         if (self.jsonDumpList is not None) and (not self.jsonFileSpec):
             cleanSubFileParts = os.path.splitext(self.cleanSubsFileSpec)
