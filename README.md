@@ -27,7 +27,7 @@ To install directly from GitHub:
 
 
 ```
-python3 -m pip install -U 'git+[https://github.com/Travillion/cleanvid]'
+python3 -m pip install -U 'git+https://github.com/Travillion/cleanvid'
 ```
 
 ## Prerequisites
