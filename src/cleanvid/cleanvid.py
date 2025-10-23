@@ -485,6 +485,18 @@ class VidCleaner(object):
                 + timePairPeek[0].second
                 + (timePairPeek[0].microsecond / 1000000.0)
             )
+            edlLineStart = (
+                f"{timePair[0].hour:02}"
+                + ':' + f"{timePair[0].minute:02}"
+                + ":" + f"{timePair[0].second:02}"
+                + str.lstrip(f"{(timePair[0].microsecond / 1000000.0):.3f}", '0')
+            )
+            edlLineEnd = (
+                f"{timePair[1].hour:02}"
+                + ':' + f"{timePair[1].minute:02}"
+                + ":" + f"{timePair[1].second:02}"
+                + str.lstrip(f"{(timePair[1].microsecond / 1000000.0):.3f}", '0')
+            )
             self.muteTimeList.append(
                 "afade=enable='between(t,"
                 + format(lineStart, '.3f')
@@ -504,7 +516,7 @@ class VidCleaner(object):
                 + ":d=10ms"
             )
             if self.edl:
-                edlLines.append(f"{format(lineStart, '.1f')}\t{format(lineEnd, '.3f')}\t1")
+                edlLines.append(f"{edlLineStart}\t{edlLineEnd}\t1")
             if plexDict:
                 plexDict["markers"][self.plexAutoSkipId].append(
                     {"start": round(lineStart * 1000.0), "end": round(lineEnd * 1000.0), "mode": "volume"}
