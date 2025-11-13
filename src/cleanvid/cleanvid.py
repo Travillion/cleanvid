@@ -332,7 +332,7 @@ class VidCleaner(object):
         UTF8Convert(self.tmpSubsFileSpec)
 
                 if not self.cleanSubsFileSpec:
-            self.cleanSubsFileSpec = subFileParts[0] + ".eng.clean" + subFileParts[1]
+            self.cleanSubsFileSpec = subFileParts[0] + ".eng.clean.forced" + subFileParts[1]
 
         if not self.edlFileSpec:
             self.edlFileSpec = subFileParts[0] + '.edl'
